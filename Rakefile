@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "wordpress_ar"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{An ActiveRecord interface to Wordpress databases.}
+    gem.description = %Q{An ActiveRecord interface to Wordpress databases.}
     gem.email = "fostgr@consumer.org"
     gem.homepage = "http://github.com/consumersunion/wordpress_ar"
     gem.authors = ["consumersunion"]
