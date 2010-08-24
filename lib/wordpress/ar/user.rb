@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class User < Wordpress::AR::Database
-      set_table_name  :users
+      set_table_name  "#{@@table_prefix}users"
       set_primary_key :ID
       
       has_many :posts,     :foreign_key => :post_author
@@ -15,6 +15,8 @@ module Wordpress
       validates_length_of :user_email,    :maximum => 100, :allow_nil => true, :allow_blank => true
       validates_length_of :user_url,      :maximum => 100, :allow_nil => true, :allow_blank => true
       validates_length_of :display_name,  :maximum => 250, :allow_nil => true, :allow_blank => true
+      
+      # user_status: 0
       
     end #class
   end #module

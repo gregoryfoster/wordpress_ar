@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class Commentmeta < Wordpress::AR::Database
-      set_table_name  :commentmeta
+      set_table_name  "#{@@table_prefix}commentmeta"
       set_primary_key :meta_id
       
       belongs_to :comment

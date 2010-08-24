@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class Post < Wordpress::AR::Database
-      set_table_name  :posts
+      set_table_name  "#{@@table_prefix}posts"
       set_primary_key :ID
 
       belongs_to :author,      :foreign_key => :post_author, :class_name => 'Wordpress::AR::User'
@@ -19,6 +19,11 @@ module Wordpress
       validates_length_of :post_type,      :maximum => 20,  :allow_nil => true, :allow_blank => true
       validates_length_of :post_mime_type, :maximum => 100, :allow_nil => true, :allow_blank => true
 
+      # post_status: publish, pending, draft, auto-draft, future, private, trash, inherit
+      # comment_status: open, closed, registered_only
+      # ping_status: open, closed
+      # post_name: is the post slug.
+      
     end #class
   end #module
 end #module

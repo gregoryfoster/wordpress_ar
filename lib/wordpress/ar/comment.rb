@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class Comment < Wordpress::AR::Database
-      set_table_name  :comments
+      set_table_name  "#{@@table_prefix}comments"
       set_primary_key :comment_id
       
       belongs_to :post,           :foreign_key => :comment_post_ID

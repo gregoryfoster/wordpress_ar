@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class Usermeta < Wordpress::AR::Database
-      set_table_name  :usermeta
+      set_table_name  "#{@@table_prefix}usermeta"
       set_primary_key :umeta_id
       
       belongs_to :user

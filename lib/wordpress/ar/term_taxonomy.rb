@@ -1,7 +1,7 @@
 module Wordpress
   module AR
     class TermTaxonomy < Wordpress::AR::Database
-      set_table_name  :term_taxonomy
+      set_table_name  "#{@@table_prefix}term_taxonomy"
       set_primary_key :term_taxonomy_id
       
       belongs_to :term

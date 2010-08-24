@@ -1,5 +1,12 @@
 # Require all model files.
 require 'wordpress/ar/database'
+
+# Configure table prefix from global or environment variable.
+prefix = WORDPRESS_TABLE_PREFIX.blank? ?
+  (ENV['WORDPRESS_TABLE_PREFIX'].blank? ? '' : ENV['WORDPRESS_TABLE_PREFIX']) :
+  WORDPRESS_TABLE_PREFIX
+Wordpress::AR::Database.set_table_prefix(prefix)
+
 require 'wordpress/ar/user'
 require 'wordpress/ar/usermeta'
 require 'wordpress/ar/post'

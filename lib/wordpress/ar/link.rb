@@ -1,7 +1,7 @@
 module Wordpress
   module AR
-    class Link < ActiveRecord::Base
-      set_table_name  :links
+    class Link < Wordpress::AR::Database
+      set_table_name  "#{@@table_prefix}links"
       set_primary_key :link_id
       
       belongs_to :user, :foreign_key => :link_owner
