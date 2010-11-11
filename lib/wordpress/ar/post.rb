@@ -9,7 +9,8 @@ module Wordpress
       has_many   :comments,    :foreign_key => :comment_post_ID
       belongs_to :parent_post, :foreign_key => :post_parent, :class_name => 'Wordpress::AR::Post'
       has_many   :child_posts, :foreign_key => :post_parent, :class_name => 'Wordpress::AR::Post'
-      
+      has_many   :term_relationships, :foreign_key => :object_id, :class_name => 'Wordpress::AR::TermRelationship'
+
       validates_length_of :post_status,    :maximum => 20,  :allow_nil => true, :allow_blank => true
       validates_length_of :comment_status, :maximum => 20,  :allow_nil => true, :allow_blank => true
       validates_length_of :ping_status,    :maximum => 20,  :allow_nil => true, :allow_blank => true
@@ -23,7 +24,7 @@ module Wordpress
       # comment_status: open, closed, registered_only
       # ping_status: open, closed
       # post_name: is the post slug.
-      
+
     end #class
   end #module
 end #module
