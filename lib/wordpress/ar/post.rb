@@ -25,6 +25,16 @@ module Wordpress
       # ping_status: open, closed
       # post_name: is the post slug.
 
+      # Find or create the requested term relationship.
+      def establish_term_relationship(taxonomy_name, term_name)
+        # Retrieve the corresponding term taxonomy.
+        term = Wordpress::AR::Term.find_by_name(term_name)
+        term_taxonomy = Wordpress::AR::Term.find_by_term_id_and_taxonomy(term.id, taxonomy_name)
+
+        # Establish a term relationship.
+        Wordpress::AR::TermRelationship.find_or_create_by_object_id_and_term_taxonomy_id(self.ID, term_taxonomy.id)
+      end
+
     end #class
   end #module
 end #module
