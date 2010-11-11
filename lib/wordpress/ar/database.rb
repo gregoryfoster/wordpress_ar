@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'active_record'
-
 module Wordpress
   module AR
     class Database < ActiveRecord::Base
