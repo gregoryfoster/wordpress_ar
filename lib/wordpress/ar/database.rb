@@ -1,3 +1,4 @@
+gem 'activerecord', '=2.3.5'
 require 'active_record'
 
 module Wordpress
