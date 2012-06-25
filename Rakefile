@@ -10,6 +10,8 @@ begin
     gem.email = 'gf-tech@entersection.org'
     gem.homepage = 'http://github.com/consumersunion/wordpress_ar'
     gem.authors = ['gregoryfoster']
+    gem.add_dependency 'activerecord', '< 3'
+    gem.add_dependency 'composite_primary_keys', '< 3'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
